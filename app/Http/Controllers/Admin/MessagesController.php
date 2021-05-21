@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-    //
+
+
+    public function __invoke()
+    {
+        return view("admin.messages.index");
+    }
 }

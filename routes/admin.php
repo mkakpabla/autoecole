@@ -31,7 +31,7 @@ Route::group(["middleware" => "auth"], function() {
     Route::delete("/packages/{package}/delete", [PackagesController::class, "delete"])->name("admin.packages.delete");
 
     // Admin messages routes
-    Route::get("/messages", [MessagesController::class, "index"])->name("admin.messages");
+    Route::get("/messages", MessagesController::class)->name("admin.messages");
 
     // Admin temoignages routes
     Route::get("/temoignages", [TemoignagesController::class, "index"])->name("admin.temoignages");

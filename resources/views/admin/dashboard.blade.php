@@ -24,10 +24,10 @@
                                 <div class="media">
                                     <div class="media-body overflow-hidden">
                                         <p class="text-truncate font-size-14 mb-2">Packages</p>
-                                        <h4 class="mb-0">1452</h4>
+                                        <h4 class="mb-0">{{ $packCount }}</h4>
                                     </div>
                                     <div class="text-primary">
-                                        <i class="ri-stack-line font-size-24"></i>
+                                        <i class="ri-archive-fill font-size-24"></i>
                                     </div>
                                 </div>
                             </div>
@@ -39,10 +39,10 @@
                                 <div class="media">
                                     <div class="media-body overflow-hidden">
                                         <p class="text-truncate font-size-14 mb-2">Messages non lus</p>
-                                        <h4 class="mb-0">20</h4>
+                                        <h4 class="mb-0">{{ $messages->count() }}</h4>
                                     </div>
                                     <div class="text-primary">
-                                        <i class="ri-store-2-line font-size-24"></i>
+                                        <i class="ri-message-line font-size-24"></i>
                                     </div>
                                 </div>
                             </div>
@@ -53,11 +53,11 @@
                             <div class="card-body">
                                 <div class="media">
                                     <div class="media-body overflow-hidden">
-                                        <p class="text-truncate font-size-14 mb-2">Average Price</p>
-                                        <h4 class="mb-0">15</h4>
+                                        <p class="text-truncate font-size-14 mb-2">Témoignages</p>
+                                        <h4 class="mb-0">{{ $tgeCount }}</h4>
                                     </div>
                                     <div class="text-primary">
-                                        <i class="ri-briefcase-4-line font-size-24"></i>
+                                        <i class="ri-user-voice-line font-size-24"></i>
                                     </div>
                                 </div>
                             </div>
@@ -65,6 +65,48 @@
                     </div>
                 </div>
                 <!-- end row -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-centered datatable dt-responsive nowrap "
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Envoyé par</th>
+                                                <th>Téléphone</th>
+                                                <th>Contenu</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach ($messages as $message)
+                                            <tr>
+                                                <td>{{ $message->sender_nom }}</td>
+                                                <td>{{ $message->sender_phone }}</td>
+                                                <td style="width: 200px">
+                                                    <a href="" class="btn btn-primary btn-sm" style="color: white"><i class="mdi mdi-pencil"></i>Marqué
+                                                        comme lu</a>
+                                                    <form class="form-del" style="display: inline-block" action="" method="post">
+                                                        @csrf
+                                                        @method("DELETE")
+                                                        <button class="btn btn-danger btn-sm"><i class="mdi mdi-trash-can"></i>Supprimer</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div> <!-- container-fluid -->
         </div>
