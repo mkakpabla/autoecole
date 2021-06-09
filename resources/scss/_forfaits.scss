@@ -1,0 +1,41 @@
+.hot-forfaits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    @include down(800) {
+        flex-direction: column;
+    }
+}
+
+.forfait {
+    padding: 25px;
+    border: 1px solid #f4ecec;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+        border: 1px solid $secondary;
+    }
+}
+
+.forfait__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.forfait__time {
+    color: white;
+    background-color: $secondary;
+    border-radius: 3px;
+    font-size: .7rem;
+    display: inline-block;
+    padding: 3px 5px;
+    margin: 5px 0;
+}
+
+.packages {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}

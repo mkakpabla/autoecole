@@ -1,0 +1,97 @@
+.sliders {
+  position: relative;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  .slide-text {
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 8%;
+    right: 10%;
+    z-index: 1;
+    animation: posi 2s;
+
+    @include down(800) {
+      top: 30%;
+    }
+  }
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    
+
+    @include down(600) {
+      font-size: 12px;
+      width: 200px;
+    }
+  }
+
+  img {
+    transform: scale(1.5, 1.5);
+    width: 100%;
+    height: auto;
+    animation: zoomin 40s;
+  }
+}
+
+.slides__nav {
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
+    user-select: none;
+    z-index: 2;
+    
+
+    &:hover {
+      color: #f3b336;
+    }
+  }
+  .prev {
+      left: 20px;
+  }
+  .next {
+      right: 20px;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes posi {
+  from {
+    left: 25%;
+  }
+  to {
+    left: 8%;
+
+  }
+}
+
+@keyframes zoomin {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}

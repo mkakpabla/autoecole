@@ -11,5 +11,5 @@ class Message extends Model
     use HasFactory, SoftDeletes;
 
     protected $primaryKey = "id_msg";
-    protected $fillable = ["sender_phone", "sender_nom", "contenu_msg"];
+    protected $fillable = ["sender_phone", "sender_nom", "contenu_msg", "status"];
 }

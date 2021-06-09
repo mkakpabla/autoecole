@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PackagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view("welcome");
-});
+Route::get("/", HomeController::class)->name("home");
+Route::get("/nos-packages", PackagesController::class)->name("packages");
+Route::get("/a-propos", AboutController::class)->name("about");
+Route::get("/nous-contacter", ContactController::class)->name("contact");

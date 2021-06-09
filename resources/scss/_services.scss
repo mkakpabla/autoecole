@@ -1,0 +1,21 @@
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+
+    @include up(720) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+.service__title {
+    font-size: 1rem;
+
+    font-weight: bold;
+}

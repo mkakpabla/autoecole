@@ -1,0 +1,22 @@
+$f-monsterat: "Monsterat";
+$primary-color: #007c7c;
+
+$danger: red;
+$secondary: #f3b336;
+
+body {
+  font-size: 14px;
+  font-family: $f-monsterat;
+  color: black;
+  line-height: 1.4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+img {
+  display: block
+}
+
+@include fontface("Monsterat", "../fonts/Montserrat-Medium", 300, null);
